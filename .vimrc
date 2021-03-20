@@ -12,6 +12,7 @@ set smartindent
 set smarttab
 set autoindent
 
+set noshowmode
 set noshowcmd
 set hidden
 set noerrorbells
@@ -22,7 +23,7 @@ set title
 set ignorecase
 set smartcase
 set formatoptions+=j
-set virtualedit=all
+set virtualedit=block
 set nowritebackup
 set nobackup
 set whichwrap=b,s,[,],<,>
@@ -40,7 +41,10 @@ set omnifunc=syntaxcomplete#Complete
 "-- PLUGINS (Using junegunn/vim-plug) --
 call plug#begin()
 
+"NERDTree and NERDTree extensions
 Plug 'preservim/NERDTree'
+Plug 'PhilRunninger/nerdtree-buffer-ops'
+
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
@@ -50,9 +54,9 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ap/vim-buftabline'
 
 "coc and coc extensions
-
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
@@ -65,13 +69,6 @@ Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 let g:rainbow_active = 1
-
-let mapleader = " "
-let g:mapleader = " "
-" easier write
-nmap <leader>w :w!<cr>
-" easier quit
-nmap <leader>q :q!<cr>
 
 " Use fontawesome icons as signs
 let g:gitgutter_sign_added = '+'
@@ -107,4 +104,17 @@ let g:indent_guides_start_level = 2
 hi IndentGuidesOdd  ctermbg=245
 hi IndentGuidesEven ctermbg=237
 
+let mapleader = " "
+let g:mapleader = " "
+" easier write
+nnoremap <leader>w :w!<cr>
+" easier quit
+nnoremap <leader>q :q<cr>
+" easier copy line, paste below
+nnoremap <leader>d yyp
+"select all
+nnoremap <leader>a ggVG
+nnoremap <leader>n :bnext<CR>
+nnoremap <leader>p :bprev<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
