@@ -118,6 +118,7 @@ nnoremap <leader>n :bnext<CR>
 nnoremap <leader>p :bprev<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gps :Dispatch! git push<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gt :Git commit -v -q %:p<CR>
+
 
