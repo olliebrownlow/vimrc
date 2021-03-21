@@ -27,6 +27,7 @@ set virtualedit=block
 set nowritebackup
 set nobackup
 set whichwrap=b,s,[,],<,>
+set signcolumn=yes
 
 " Update sign column every quarter second
 set updatetime=250
@@ -81,11 +82,11 @@ let g:gitgutter_override_sign_column_highlight = 1
 highlight SignColumn ctermbg=black
 
 let g:lightline = {
-      \ 'component_function': {
-      \   'fileformat': 'LightlineFileformat',
-      \   'filetype': 'LightlineFiletype',
-      \ },
-      \ }
+    \ 'component_function': {
+    \   'fileformat': 'LightlineFileformat',
+    \   'filetype': 'LightlineFiletype',
+    \ },
+    \ }
 
 function! LightlineFileformat()
   return winwidth(0) > 70 ? &fileformat : ''
@@ -112,13 +113,21 @@ nnoremap <leader>w :w!<cr>
 nnoremap <leader>q :q<cr>
 " easier copy line, paste below
 nnoremap <leader>d yyp
-"select all
+" select all
 nnoremap <leader>a ggVG
-nnoremap <leader>n :bnext<CR>
-nnoremap <leader>p :bprev<CR>
+" buffer maps
+nnoremap <leader>> :bnext<CR>
+nnoremap <leader>< :bprev<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
+" git maps
 nnoremap <leader>gs :Gstatus<CR>
+" - toggles changes to stage.
+" Use cc to commit. 
+" Save/quit the commmit message.
+" Use - to push individual commits.
 nnoremap <leader>gp :Gpush<CR>
-nnoremap <leader>gt :Git commit -v -q %:p<CR>
-
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>h <C-w>K
+nnoremap <leader>v <C-w>H
 
