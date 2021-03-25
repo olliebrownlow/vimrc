@@ -11,6 +11,8 @@ set shiftwidth=2
 set smartindent
 set smarttab
 set autoindent
+set wildmenu
+set wildmode=full
 
 set noshowmode
 set noshowcmd
@@ -54,6 +56,7 @@ Plug 'tpope/vim-surround'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ap/vim-buftabline'
 
@@ -136,4 +139,10 @@ nnoremap <leader>h <C-w>K
 nnoremap <leader>v <C-w>H
 " add blank line
 nnoremap <leader>o o<esc>
+
+" for sessions
+let g:session_dir = '~/.vim-sessions'
+" Remaps for sessions
+exec 'nnoremap <Leader>ss :Obsession ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>sr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
