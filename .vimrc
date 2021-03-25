@@ -107,17 +107,18 @@ hi IndentGuidesEven ctermbg=237
 
 let mapleader = " "
 let g:mapleader = " "
-" easier write
+" write
 nnoremap <leader>w :w!<cr>
-" easier quit
+" quit
 nnoremap <leader>q :q<cr>
-" easier copy line, paste below
+" copy line, paste below
 nnoremap <leader>d yyp
 " select all
 nnoremap <leader>a ggVG
 " buffer maps
 nnoremap <leader>> :bnext<CR>
 nnoremap <leader>< :bprev<CR>
+" open NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>
 " git maps
 nnoremap <leader>gs :Gstatus<CR>
@@ -126,8 +127,13 @@ nnoremap <leader>gs :Gstatus<CR>
 " Save/quit the commmit message.
 " Use - to push individual commits.
 nnoremap <leader>gp :Gpush<CR>
+" vim-plug maps
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
+" 2 horizontal windows
 nnoremap <leader>h <C-w>K
+" 2 vertical windows
 nnoremap <leader>v <C-w>H
+" add blank line
+nnoremap <leader>o o<esc>
 
