@@ -139,6 +139,12 @@ nnoremap <leader>h <C-w>K
 nnoremap <leader>v <C-w>H
 " add blank line
 nnoremap <leader>o o<esc>
+" surround line with {} and space
+nnoremap <leader>b{ yss{
+" surround line with () no space
+nnoremap <leader>b) yss)
+" surround V selection in div
+vmap <leader>bd S<div>
 
 " for sessions
 let g:session_dir = '~/.vim-sessions'
