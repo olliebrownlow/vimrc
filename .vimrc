@@ -59,6 +59,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ap/vim-buftabline'
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 
 "coc and coc extensions
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -133,6 +134,10 @@ nnoremap <leader>gp :Gpush<CR>
 " vim-plug maps
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pc :PlugClean<CR>
+" preview markdown
+nnoremap <leader>pm :MarkdownPreview<CR>
+" stop preview markdown
+nnoremap <leader>ps :MarkdownPreviewStop<CR>
 " 2 horizontal windows
 nnoremap <leader>h <C-w>K
 " 2 vertical windows
