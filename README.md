@@ -1,3 +1,3 @@
-.vimrc
+## .vimrc
 
-messy .vimrc with some useful settings for coding.
+.vimrc with some useful settings for coding.
